@@ -3,74 +3,77 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blue Door Bakery – Fresh bread, baked every morning</title>
-<meta name="description" content="Neighbourhood bakery. Fresh bread, pastries and cakes baked every morning. Order by phone or WhatsApp.">
+<title>Charan Stall – Fresh food, made daily</title>
+<meta name="description" content="Charan Stall. Fresh food made daily. Order by phone or WhatsApp, or pay online.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#1F3A5F; --butter:#F6D66B; --flour:#FBFBF8; --berry:#B5385A; --text:#1B1F2A;
-  --font:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-}
+:root{--ink:#1F3A5F;--butter:#F6D66B;--flour:#FBFBF8;--berry:#B5385A;--text:#1B1F2A;
+--font:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--font);color:var(--text);background:var(--flour);line-height:1.6;font-size:1.0625rem}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--berry);outline-offset:3px}
 .wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
-
 header{background:var(--ink);color:var(--flour)}
 header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:1rem;padding-bottom:1rem;flex-wrap:wrap}
 .logo{font-weight:800;font-size:1.25rem;text-decoration:none}
-nav a{margin-left:1.25rem;text-decoration:none;font-weight:600}
+nav{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:600}
 nav a:hover{text-decoration:underline}
-
+.linkbtn{background:none;border:2px solid var(--flour);color:var(--flour);font:inherit;font-weight:600;padding:.3rem .9rem;border-radius:.4rem;cursor:pointer}
+.linkbtn:hover{background:rgba(255,255,255,.12)}
+#who{font-size:.95rem;color:var(--butter)}
 .hero{background:var(--ink);color:var(--flour);padding:3rem 0 4.5rem}
 .hero h1{font-size:clamp(2.6rem,8vw,5.5rem);line-height:1;margin:0 0 1.25rem;font-weight:800;max-width:12ch;letter-spacing:-.02em}
 .hero p{max-width:34rem;font-size:1.2rem;margin:0 0 2rem;color:#dfe6f0}
-.btn{display:inline-block;background:var(--butter);color:var(--ink);font-weight:800;padding:.85rem 1.5rem;border-radius:.4rem;text-decoration:none}
+.btn{display:inline-block;background:var(--butter);color:var(--ink);font-weight:800;padding:.85rem 1.5rem;border-radius:.4rem;text-decoration:none;border:0;font-family:inherit;font-size:1rem;cursor:pointer}
 .btn:hover{background:#ffe388}
 .btn.alt{background:transparent;color:var(--flour);border:2px solid var(--flour);margin-left:.6rem}
 .btn.alt:hover{background:rgba(255,255,255,.12)}
-
+.btn.dark{background:var(--ink);color:var(--flour)}
+.btn.dark:hover{background:#2c4d7c}
 section{padding:3.5rem 0}
 h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.1;margin:0 0 1.5rem;color:var(--ink);font-weight:800}
-
 .menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:2.5rem}
 .menu h3{margin:0 0 .75rem;color:var(--berry);font-size:1.2rem}
 .menu ul{list-style:none;margin:0;padding:0}
 .menu li{display:flex;align-items:baseline;gap:.5rem;padding:.35rem 0}
 .menu li::after{content:"";order:2;flex:1;border-bottom:2px dotted #c9ccd3}
-.menu .n{order:1}
-.menu .p{order:3;font-weight:600}
+.menu .n{order:1}.menu .p{order:3;font-weight:600}
 .note{margin-top:1.5rem;color:#4b5263}
-
 .about{background:var(--butter)}
 .about .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:2rem}
 .about p{margin:0 0 1rem;max-width:34rem}
-
+.pay p{max-width:36rem;margin:0 0 1.25rem}
+.msg{margin-top:1rem;font-weight:600;color:var(--berry)}
 .visit dl{display:grid;grid-template-columns:max-content 1fr;gap:.4rem 1.5rem;margin:0 0 1.5rem}
-.visit dt{font-weight:800;color:var(--ink)}
-.visit dd{margin:0}
-
+.visit dt{font-weight:800;color:var(--ink)}.visit dd{margin:0}
 footer{background:var(--ink);color:#dfe6f0;padding:1.5rem 0;font-size:.95rem}
-
-@media (max-width:30rem){
-  .btn.alt{margin:.75rem 0 0}
-  nav a{margin:0 1rem 0 0}
-}
+dialog{border:0;border-radius:.6rem;padding:1.5rem;width:min(92vw,24rem);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+dialog h2{font-size:1.5rem;margin-bottom:1rem}
+label{display:block;font-weight:600;margin-bottom:.9rem}
+input{display:block;width:100%;margin-top:.3rem;padding:.6rem .7rem;font:inherit;border:2px solid #b8bdc9;border-radius:.4rem}
+.row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-top:.5rem}
+.toggle{background:none;border:0;color:var(--ink);font:inherit;text-decoration:underline;cursor:pointer;padding:0}
+@media (max-width:30rem){.btn.alt{margin:.75rem 0 0}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <a class="logo" href="#top">Blue Door Bakery</a>
+    <a class="logo" href="#top">Charan Stall</a>
     <nav aria-label="Main">
       <a href="#menu">Menu</a>
       <a href="#about">Our story</a>
+      <a href="#pay">Pay online</a>
       <a href="#visit">Visit</a>
+      <span id="who" hidden></span>
+      <button class="linkbtn" id="authBtn" type="button">Log in</button>
     </nav>
   </div>
 </header>
@@ -78,9 +81,9 @@ footer{background:var(--ink);color:#dfe6f0;padding:1.5rem 0;font-size:.95rem}
 <main id="top">
   <div class="hero">
     <div class="wrap">
-      <h1>Bread that is still warm.</h1>
-      <p>We bake loaves, pastries and cakes every morning in the heart of your neighbourhood. Come in, or order ahead and pick up on your way to work.</p>
-      <a class="btn" href="https://wa.me/910000000000" >Order on WhatsApp</a>
+      <h1>Charan Stall</h1>
+      <p>Fresh food made every day, close to home. Come in, or order ahead and pick it up on your way.</p>
+      <a class="btn" href="#pay">Pay online</a>
       <a class="btn alt" href="#menu">See the menu</a>
     </div>
   </div>
@@ -99,7 +102,7 @@ footer{background:var(--ink);color:#dfe6f0;padding:1.5rem 0;font-size:.95rem}
           </ul>
         </div>
         <div>
-          <h3>Pastries and cakes</h3>
+          <h3>Snacks and sweets</h3>
           <ul>
             <li><span class="n">Butter croissant</span><span class="p">₹80</span></li>
             <li><span class="n">Chocolate brownie</span><span class="p">₹70</span></li>
@@ -114,13 +117,20 @@ footer{background:var(--ink);color:#dfe6f0;padding:1.5rem 0;font-size:.95rem}
 
   <section id="about" class="about">
     <div class="wrap">
+      <div><h2>Made small, made daily</h2></div>
       <div>
-        <h2>Baked small, baked daily</h2>
+        <p>Charan Stall started with one stall and a handful of recipes. We still make everything in small batches, so what you buy was made that day.</p>
+        <p>We use simple ingredients and fair prices. If we sell out, we sell out.</p>
       </div>
-      <div>
-        <p>Blue Door started as one oven and a handful of recipes from the family kitchen. Today we still mix every dough by hand and bake in small batches, so what you buy was made that morning.</p>
-        <p>We use simple ingredients: flour, butter, eggs, and time. If we sell out, we sell out.</p>
-      </div>
+    </div>
+  </section>
+
+  <section id="pay" class="pay">
+    <div class="wrap">
+      <h2>Pay online</h2>
+      <p>Pay securely with UPI, card, or net banking on Razorpay's payment page. We never see or store your card details.</p>
+      <a class="btn dark" id="payBtn" href="#pay">Pay now</a>
+      <p class="msg" id="payMsg" role="status"></p>
     </div>
   </section>
 
@@ -133,15 +143,112 @@ footer{background:var(--ink);color:#dfe6f0;padding:1.5rem 0;font-size:.95rem}
         <dt>Phone</dt><dd><a href="tel:+910000000000">+91 00000 00000</a></dd>
         <dt>Email</dt><dd><a href="mailto:hello@example.com">hello@example.com</a></dd>
       </dl>
-      <a class="btn" href="https://wa.me/910000000000" style="background:var(--ink);color:var(--flour)">Message us on WhatsApp</a>
+      <a class="btn dark" href="https://wa.me/910000000000">Message us on WhatsApp</a>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">© <span id="y">2026</span> Blue Door Bakery. Demo website.</div>
-</footer>
+<footer><div class="wrap">© <span id="y">2026</span> Charan Stall. Demo website.</div></footer>
 
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<dialog id="authDlg" aria-labelledby="authTitle">
+  <h2 id="authTitle">Log in</h2>
+  <form id="authForm">
+    <label>Email<input type="email" id="email" autocomplete="email" required></label>
+    <label>Password<input type="password" id="pw" autocomplete="current-password" minlength="6" required></label>
+    <p class="msg" id="authMsg" role="status"></p>
+    <div class="row">
+      <button class="btn dark" type="submit" id="authSubmit">Log in</button>
+      <button class="btn" type="button" id="authClose" style="background:#e6e8ee">Cancel</button>
+    </div>
+    <p style="margin:1rem 0 0">
+      <span id="swapText">New customer?</span>
+      <button class="toggle" type="button" id="swapBtn">Create an account</button>
+    </p>
+  </form>
+</dialog>
+
+<script type="module">
+/* ====== 1. PAYMENT: paste your Razorpay Payment Link here ====== */
+const PAYMENT_LINK = "https://rzp.io/l/YOUR_LINK";
+
+/* ====== 2. LOGIN: paste your Firebase web app settings here ====== */
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  appId: "YOUR_APP_ID"
+};
+
+document.getElementById('y').textContent = new Date().getFullYear();
+const $ = id => document.getElementById(id);
+
+/* Payment button */
+const payBtn = $('payBtn'), payMsg = $('payMsg');
+if (PAYMENT_LINK.includes('YOUR_LINK')) {
+  payBtn.addEventListener('click', e => {
+    e.preventDefault();
+    payMsg.textContent = 'Online payment is not set up yet. Add your Razorpay payment link in the code.';
+  });
+} else {
+  payBtn.href = PAYMENT_LINK;
+  payBtn.target = '_blank';
+  payBtn.rel = 'noopener';
+}
+
+/* Login */
+const dlg = $('authDlg'), form = $('authForm'), msg = $('authMsg');
+const configured = !firebaseConfig.apiKey.startsWith('YOUR_');
+let mode = 'login', auth = null, fb = null;
+
+function setMode(m) {
+  mode = m;
+  const login = m === 'login';
+  $('authTitle').textContent = login ? 'Log in' : 'Create account';
+  $('authSubmit').textContent = login ? 'Log in' : 'Create account';
+  $('swapText').textContent = login ? 'New customer?' : 'Already have an account?';
+  $('swapBtn').textContent = login ? 'Create an account' : 'Log in';
+  $('pw').autocomplete = login ? 'current-password' : 'new-password';
+  msg.textContent = '';
+}
+
+if (configured) {
+  const appMod = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js');
+  fb = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js');
+  auth = fb.getAuth(appMod.initializeApp(firebaseConfig));
+  fb.onAuthStateChanged(auth, user => {
+    $('who').hidden = !user;
+    $('who').textContent = user ? user.email : '';
+    $('authBtn').textContent = user ? 'Log out' : 'Log in';
+  });
+}
+
+$('authBtn').addEventListener('click', async () => {
+  if (auth && auth.currentUser) { await fb.signOut(auth); return; }
+  setMode('login');
+  dlg.showModal();
+  if (!configured) msg.textContent = 'Login is not set up yet. Add your Firebase settings in the code.';
+});
+$('authClose').addEventListener('click', () => dlg.close());
+$('swapBtn').addEventListener('click', () => setMode(mode === 'login' ? 'signup' : 'login'));
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!configured) { msg.textContent = 'Login is not set up yet. Add your Firebase settings in the code.'; return; }
+  msg.textContent = 'Please wait…';
+  try {
+    const email = $('email').value.trim(), pw = $('pw').value;
+    if (mode === 'login') await fb.signInWithEmailAndPassword(auth, email, pw);
+    else await fb.createUserWithEmailAndPassword(auth, email, pw);
+    form.reset(); msg.textContent = ''; dlg.close();
+  } catch (err) {
+    const c = err.code || '';
+    msg.textContent =
+      c.includes('invalid-credential') || c.includes('wrong-password') || c.includes('user-not-found') ? 'Email or password is incorrect.' :
+      c.includes('email-already-in-use') ? 'This email already has an account. Log in instead.' :
+      c.includes('weak-password') ? 'Use a password with at least 6 characters.' :
+      'Something went wrong. Please try again.';
+  }
+});
+</script>
 </body>
 </html>
