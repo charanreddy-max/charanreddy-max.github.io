@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blue Door Bakery – Fresh bread, baked every morning</title>
+<meta name="description" content="Neighbourhood bakery. Fresh bread, pastries and cakes baked every morning. Order by phone or WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1F3A5F; --butter:#F6D66B; --flour:#FBFBF8; --berry:#B5385A; --text:#1B1F2A;
+  --font:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);color:var(--text);background:var(--flour);line-height:1.6;font-size:1.0625rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--berry);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+
+header{background:var(--ink);color:var(--flour)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:1rem;padding-bottom:1rem;flex-wrap:wrap}
+.logo{font-weight:800;font-size:1.25rem;text-decoration:none}
+nav a{margin-left:1.25rem;text-decoration:none;font-weight:600}
+nav a:hover{text-decoration:underline}
+
+.hero{background:var(--ink);color:var(--flour);padding:3rem 0 4.5rem}
+.hero h1{font-size:clamp(2.6rem,8vw,5.5rem);line-height:1;margin:0 0 1.25rem;font-weight:800;max-width:12ch;letter-spacing:-.02em}
+.hero p{max-width:34rem;font-size:1.2rem;margin:0 0 2rem;color:#dfe6f0}
+.btn{display:inline-block;background:var(--butter);color:var(--ink);font-weight:800;padding:.85rem 1.5rem;border-radius:.4rem;text-decoration:none}
+.btn:hover{background:#ffe388}
+.btn.alt{background:transparent;color:var(--flour);border:2px solid var(--flour);margin-left:.6rem}
+.btn.alt:hover{background:rgba(255,255,255,.12)}
+
+section{padding:3.5rem 0}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.1;margin:0 0 1.5rem;color:var(--ink);font-weight:800}
+
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:2.5rem}
+.menu h3{margin:0 0 .75rem;color:var(--berry);font-size:1.2rem}
+.menu ul{list-style:none;margin:0;padding:0}
+.menu li{display:flex;align-items:baseline;gap:.5rem;padding:.35rem 0}
+.menu li::after{content:"";order:2;flex:1;border-bottom:2px dotted #c9ccd3}
+.menu .n{order:1}
+.menu .p{order:3;font-weight:600}
+.note{margin-top:1.5rem;color:#4b5263}
+
+.about{background:var(--butter)}
+.about .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:2rem}
+.about p{margin:0 0 1rem;max-width:34rem}
+
+.visit dl{display:grid;grid-template-columns:max-content 1fr;gap:.4rem 1.5rem;margin:0 0 1.5rem}
+.visit dt{font-weight:800;color:var(--ink)}
+.visit dd{margin:0}
+
+footer{background:var(--ink);color:#dfe6f0;padding:1.5rem 0;font-size:.95rem}
+
+@media (max-width:30rem){
+  .btn.alt{margin:.75rem 0 0}
+  nav a{margin:0 1rem 0 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Blue Door Bakery</a>
+    <nav aria-label="Main">
+      <a href="#menu">Menu</a>
+      <a href="#about">Our story</a>
+      <a href="#visit">Visit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <h1>Bread that is still warm.</h1>
+      <p>We bake loaves, pastries and cakes every morning in the heart of your neighbourhood. Come in, or order ahead and pick up on your way to work.</p>
+      <a class="btn" href="https://wa.me/910000000000" >Order on WhatsApp</a>
+      <a class="btn alt" href="#menu">See the menu</a>
+    </div>
+  </div>
+
+  <section id="menu">
+    <div class="wrap">
+      <h2>Today's menu</h2>
+      <div class="menu">
+        <div>
+          <h3>Breads</h3>
+          <ul>
+            <li><span class="n">Country sourdough</span><span class="p">₹180</span></li>
+            <li><span class="n">Multigrain loaf</span><span class="p">₹140</span></li>
+            <li><span class="n">Soft milk buns (6)</span><span class="p">₹90</span></li>
+            <li><span class="n">Garlic focaccia</span><span class="p">₹120</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Pastries and cakes</h3>
+          <ul>
+            <li><span class="n">Butter croissant</span><span class="p">₹80</span></li>
+            <li><span class="n">Chocolate brownie</span><span class="p">₹70</span></li>
+            <li><span class="n">Cinnamon roll</span><span class="p">₹95</span></li>
+            <li><span class="n">Custom cake (1 kg)</span><span class="p">from ₹900</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">Prices are sample values for this demo. Custom cakes need 24 hours' notice.</p>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <div>
+        <h2>Baked small, baked daily</h2>
+      </div>
+      <div>
+        <p>Blue Door started as one oven and a handful of recipes from the family kitchen. Today we still mix every dough by hand and bake in small batches, so what you buy was made that morning.</p>
+        <p>We use simple ingredients: flour, butter, eggs, and time. If we sell out, we sell out.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" class="visit">
+    <div class="wrap">
+      <h2>Visit or order</h2>
+      <dl>
+        <dt>Address</dt><dd>12 Market Road, Your City</dd>
+        <dt>Hours</dt><dd>Mon–Sat 7:00 am – 8:00 pm, Sun 8:00 am – 2:00 pm</dd>
+        <dt>Phone</dt><dd><a href="tel:+910000000000">+91 00000 00000</a></dd>
+        <dt>Email</dt><dd><a href="mailto:hello@example.com">hello@example.com</a></dd>
+      </dl>
+      <a class="btn" href="https://wa.me/910000000000" style="background:var(--ink);color:var(--flour)">Message us on WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="y">2026</span> Blue Door Bakery. Demo website.</div>
+</footer>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
